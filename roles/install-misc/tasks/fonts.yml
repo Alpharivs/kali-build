@@ -1,11 +1,20 @@
 ---
-- name: "Unzip Fonts"
+- name: "Downloading Hack Fonts"
   shell: |
-    unzip fonts.zip
-    rm fonts.zip
-    mv Fonts fonts
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip -O hack.zip
 
-- name: "Move Fonts to /usr/share/fonts/"
+- name: "Moving Hack Fonts"
   shell: |
-    sudo mv fonts/* /usr/share/fonts/
-    rm -rf fonts/
+    unzip hack.zip -d /usr/share/fonts/
+  become: true
+  become_method: sudo
+
+- name: "Downloading Meslo Fonts"
+  shell: |
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Meslo.zip -O meslo.zip
+
+- name: "Moving Meslo Fonts"
+  shell: |
+    unzip meslo.zip -d /usr/share/fonts/
+  become: true
+  become_method: sudo
