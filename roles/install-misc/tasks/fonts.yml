@@ -5,7 +5,8 @@
 
 - name: "Moving Hack Fonts"
   shell: |
-    unzip hack.zip -d /usr/share/fonts/
+    unzip -o hack.zip -d /usr/share/fonts/
+    rm hack.zip
   become: true
   become_method: sudo
 
@@ -15,6 +16,7 @@
 
 - name: "Moving Meslo Fonts"
   shell: |
-    unzip meslo.zip -d /usr/share/fonts/
+    unzip -o meslo.zip -d /usr/share/fonts/
+    rm meslo.zip
   become: true
   become_method: sudo
