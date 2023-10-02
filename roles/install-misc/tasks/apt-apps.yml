@@ -24,7 +24,7 @@
       - ffuf
       - kitty
       - lsd
-      - neovim
+      - docker.io
       - rlwrap
       - whatweb
       - virtualbox-guest-x11
