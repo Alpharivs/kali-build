@@ -12,7 +12,6 @@
 - name: "Installing Packages"
   package:
     name:
-      - code-oss
       - jq
       - nuclei
       - libimage-exiftool-perl

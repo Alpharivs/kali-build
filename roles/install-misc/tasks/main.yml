@@ -1,4 +1,4 @@
 ---
-- include: apt-apps.yml
-- include: p10k.yml
-- include: nvchad.yml
+- include_tasks: apt-apps.yml
+- include_tasks: p10k.yml
+- include_tasks: nvchad.yml

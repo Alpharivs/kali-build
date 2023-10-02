@@ -4,11 +4,10 @@
     src: "{{ role_path }}/files/.zshrc"
     dest: "{{ ansible_env.HOME }}"
 
-- name: "Create Symlink for Root"
-  file:
-    src: "{{ ansible_env.HOME }}/.zshrc"
-    dest: /root/.zshrc
-    state: link
+- name: "Copy zshrc for Root"
+  copy: 
+    src: "{{ role_path }}/files/.zshrc"
+    dest: /root/
   become: true
   become_method: sudo
 
@@ -42,7 +41,7 @@
   become: true
   become_method: sudo
 
-  - name: "Create zsh-sudo Directory"
+- name: "Create zsh-sudo Directory"
   file:
     path: /usr/share/zsh-sudo
     state: directory
@@ -51,8 +50,7 @@
 
 - name: "Copy zsh-sudo Files"
   copy: 
-    src: "{{ role_path }}/files/zsh-sudo/"
+    src: "{{ role_path }}/files/zsh-sudo/sudo.plugin.zsh"
     dest: /usr/share/zsh-sudo/
-    recurse: yes
   become: true
   become_method: sudo
