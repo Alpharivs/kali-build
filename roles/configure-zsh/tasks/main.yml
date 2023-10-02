@@ -1,0 +1,58 @@
+---
+- name: "Copy zshrc"
+  copy: 
+    src: "{{ role_path }}/files/.zshrc"
+    dest: "{{ ansible_env.HOME }}"
+
+- name: "Create Symlink for Root"
+  file:
+    src: "{{ ansible_env.HOME }}/.zshrc"
+    dest: /root/.zshrc
+    state: link
+  become: true
+  become_method: sudo
+
+- name: "Create zsh-syntax-highlighting Directory"
+  file:
+    path: /usr/share/zsh-syntax-highlighting
+    state: directory
+  become: true
+  become_method: sudo
+
+- name: "Copy zsh-syntax-highlighting Files"
+  copy: 
+    src: "{{ role_path }}/files/zsh-syntax-highlighting/"
+    dest: /usr/share/zsh-syntax-highlighting/
+    recurse: yes
+  become: true
+  become_method: sudo
+
+- name: "Create zsh-autosuggestions Directory"
+  file:
+    path: /usr/share/zsh-autosuggestions
+    state: directory
+  become: true
+  become_method: sudo
+
+- name: "Copy zsh-autosuggestions Files"
+  copy: 
+    src: "{{ role_path }}/files/zsh-autosuggestions/"
+    dest: /usr/share/zsh-autosuggestions/
+    recurse: yes
+  become: true
+  become_method: sudo
+
+  - name: "Create zsh-sudo Directory"
+  file:
+    path: /usr/share/zsh-sudo
+    state: directory
+  become: true
+  become_method: sudo
+
+- name: "Copy zsh-sudo Files"
+  copy: 
+    src: "{{ role_path }}/files/zsh-sudo/"
+    dest: /usr/share/zsh-sudo/
+    recurse: yes
+  become: true
+  become_method: sudo

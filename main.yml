@@ -1,0 +1,19 @@
+---
+- name: "Custom VM"
+  hosts: localhost
+  connection: local
+  roles:
+    - role: "roles/install-misc"
+    - role: "roles/configure-kitty"
+    - role: "roles/configure-zsh"
+    - role: "roles/configure-home"
+    - role: gantsign.visual-studio-code
+      users:
+        - username: "{{ ansible_user_id }}"
+          visual_studio_code_extensions:
+            - streetsidesoftware.code-spell-checker
+            - ms-python.python
+#            - GitHub.copilot
+            - DEVSENSE.phptools-vscode
+            - snyk-security.snyk-vulnerability-scanner
+            - silofy.hackthebox

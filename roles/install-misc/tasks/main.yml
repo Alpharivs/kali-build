@@ -1,0 +1,4 @@
+---
+- include: apt-apps.yml
+- include: p10k.yml
+- include: nvchad.yml
