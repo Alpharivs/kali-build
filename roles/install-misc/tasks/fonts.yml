@@ -1,5 +1,11 @@
 ---
-- name: "Download Fonts from Cloud"
+- name: "Unzip Fonts"
   shell: |
-    wget https://mega.nz/file/pTdiHD4K#uAqsHUxePfnJtG8dHZI6-T3WWu6fZ3iYlYr25i9J6UU -O fonts.zip
-    unzip fonts.zip fonts
+    unzip fonts.zip
+    rm fonts.zip
+    mv Fonts fonts
+
+- name: "Move Fonts to /usr/share/fonts/"
+  shell: |
+    sudo mv fonts/* /usr/share/fonts/
+    rm -rf fonts/
