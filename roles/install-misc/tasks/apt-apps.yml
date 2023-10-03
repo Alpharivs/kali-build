@@ -28,6 +28,8 @@
       - rlwrap
       - whatweb
       - virtualbox-guest-x11
+      - nishang
+      - ncat
     state: latest
   become: true
   become_method: sudo
