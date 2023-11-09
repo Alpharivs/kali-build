@@ -30,6 +30,9 @@
       - virtualbox-guest-x11
       - nishang
       - ncat
+      - ntpdate
+      - neo4j
+      - shellcheck
     state: latest
   become: true
   become_method: sudo
