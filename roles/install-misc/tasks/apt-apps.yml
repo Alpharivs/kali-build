@@ -33,6 +33,9 @@
       - ntpdate
       - neo4j
       - shellcheck
+      - golang
+      - enum4linux-ng
+      - bloodhound
     state: latest
   become: true
   become_method: sudo
