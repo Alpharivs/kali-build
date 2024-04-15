@@ -22,7 +22,6 @@
   copy: 
     src: "{{ role_path }}/files/zsh-syntax-highlighting/"
     dest: /usr/share/zsh-syntax-highlighting/
-    recurse: yes
   become: true
   become_method: sudo
 
@@ -37,7 +36,6 @@
   copy: 
     src: "{{ role_path }}/files/zsh-autosuggestions/"
     dest: /usr/share/zsh-autosuggestions/
-    recurse: yes
   become: true
   become_method: sudo
 
