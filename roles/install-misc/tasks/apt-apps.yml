@@ -12,6 +12,7 @@
 - name: "Installing Packages"
   package:
     name:
+      - xclip
       - jq
       - nuclei
       - libimage-exiftool-perl
