@@ -12,6 +12,7 @@
 - name: "Installing Packages"
   package:
     name:
+      - sshpass
       - xclip
       - jq
       - nuclei
